@@ -1,1 +1,24 @@
- 
+# MATLAB specific
+*.asv
+*.m~
+*.mex*
+*.mat
+slprj/
+sccprj/
+codegen/
+*.slxc
+*.mlx~
+
+# System specific
+.DS_Store
+Thumbs.db
+
+# Editor specific
+*.swp
+*~
+
+# Results and figures
+*.fig
+*.eps
+*.pdf
+results/ 
