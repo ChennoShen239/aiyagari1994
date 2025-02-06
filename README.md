@@ -18,7 +18,7 @@
 
 1. 克隆仓库到本地：
 ```bash
-git clone https://github.com/chengao1992/aiyagari1994.git
+git clone https://github.com/ChennoShen239/aiyagari1994.git
 ```
 
 2. 在MATLAB中添加项目路径：
@@ -30,41 +30,39 @@ addpath(genpath('aiyagari1994'));
 
 ```
 .
-├── aiyagari1994/           # 主要代码目录
-│   ├── aiyagari.m         # 主程序文件
-│   ├── tauchen.m         # Tauchen方法离散化AR(1)过程
-│   ├── linInterp.m       # 线性插值函数
-│   ├── getWeights.m      # 计算网格插值权重
-│   ├── quantiles.m       # 计算分位数
-│   └── Steady_State/     # 稳态计算相关函数
-│       ├── solveHH.m     # 求解家庭问题
-│       ├── summary.m     # 计算统计结果
-│       └── plotFigs.m    # 绘制结果图形
+├── aiyagari.m              # 主程序文件
+├── tauchen.m              # Tauchen方法离散化AR(1)过程
+├── linInterp.m            # 线性插值函数
+├── getWeights.m           # 计算网格插值权重
+├── quantiles.m            # 计算分位数
+└── Steady_State/          # 稳态计算相关函数
+    ├── solveHH.m         # 求解家庭问题
+    ├── dispSum.m         # 显示统计结果
+    └── plotFigs.m        # 绘制结果图形
 ```
 
 ## 主要参数说明
 
 经济参数:
-- `econ.risk_aversion`: 风险厌恶系数 (默认=2.0)
-- `econ.discount_factor`: 折现因子 (默认=0.93)
-- `econ.depreciation_rate`: 资本折旧率 (默认=0.12)
-- `econ.capital_share`: 资本份额 (默认=0.36)
-- `econ.asset_min`: 借贷约束 (默认=0)
-- `econ.asset_max`: 资产上限 (默认=50)
+- `params.crra`: 风险厌恶系数 (默认=2.0)
+- `params.beta`: 折现因子 (默认=0.93)
+- `params.delta`: 资本折旧率 (默认=0.12)
+- `params.alpha`: 资本份额 (默认=0.36)
+- `params.a_min`: 借贷约束 (默认=0)
+- `params.a_max`: 资产上限 (默认=30)
 
 生产率冲击参数:
-- `rho_prod`: AR(1)过程的持续性 (默认=0.90)
-- `sigma_prod`: 创新项的标准差 (默认=0.20)
+- `rho_z`: AR(1)过程的持续性 (默认=0.90)
+- `sigma_z`: 创新项的标准差 (默认=0.20)
 
 数值方法参数:
-- `n_prod`: 生产率网格点数 (默认=7)
-- `n_asset`: 资产网格点数 (默认=500)
+- `n.z`: 生产率网格点数 (默认=7)
+- `n.a`: 资产网格点数 (默认=500)
 
 ## 使用说明
 
 1. 确保所有文件在正确的目录结构下
 2. 在MATLAB中运行主程序:
-
 ```matlab
 run aiyagari.m
 ```
